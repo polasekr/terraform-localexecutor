@@ -14,14 +14,14 @@
 
 resource "null_resource" "pwd" {
   provisioner "local-exec" {
-    command = "pwd  > pwd.out"
+    command = "pwd  > ${path.module}/pwd.out"
   }
 }
 
 
 resource "null_resource" "ls" {
   provisioner "local-exec" {
-    command = "ls -la  > ls.out"
+    command = "ls -la  > ${path.module}/ls.out"
   }
 }
 
