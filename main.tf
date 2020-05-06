@@ -45,6 +45,6 @@
 #}
 
 data "external" "cmd" {
-  program = ["sh", "cmd2out.sh"]
+  program = ["sh", "./cmd2out.sh"]
 
 }
