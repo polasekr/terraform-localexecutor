@@ -48,3 +48,8 @@ data "external" "cmd" {
   program = ["sh", "${path.module}/cmd2out.sh"]
 
 }
+
+resource "local_file" "foo" {
+    content     = data.external.cmd.result
+    filename = "foo.bar"
+}
