@@ -1,9 +1,15 @@
-data "external" "ls" {
-  program = ["sh", "-c", "ls -la"]
+resource "null_resource" "pwd" {
 
+  provisioner "local-exec" {
+    command = "pwd &> pwd.out ; echo "RESULT: $?" >> pwd.out"
+  }
 }
 
-data "external" "pwd" {
-  program = ["sh", "-c", "pwd"]
+resource "null_resource" "ls" {
 
+  provisioner "local-exec" {
+    command = "ls -la &> ls.out ; echo "RESULT: $?" >> ls.out"
+  }
 }
+
+
