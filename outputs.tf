@@ -1,8 +1,8 @@
 output "stdout" {
   value       = <<EOF
  
-${file("pwd.out")}
-${file("ls.out")}
+${file("/tmp/pwd.out")}
+${file("/tmp/ls.out")}
 data.external.ls.result
 EOF
 }
