@@ -79,7 +79,3 @@ variable "mysql_options" {
   description = "List of configuration options : https://docs.microsoft.com/fr-fr/azure/mysql/howto-server-parameters#list-of-configurable-server-parameters"
 }
 
-variable "ARM_SUBSCRIPTION_ID" { }
-variable "ARM_CLIENT_ID" { }
-variable "ARM_CLIENT_SECRET" { }
-variable "ARM_TENANT_ID" { }
