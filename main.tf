@@ -1,9 +1,9 @@
-resource "null_resource" "pwd" {
-
-  provisioner "local-exec" {
-    command = "pwd > pwd.out 2>&1; echo \"RESULT: $?\" >> pwd.out"
-  }
-}
+#resource "null_resource" "pwd" {
+#
+#  provisioner "local-exec" {
+#    command = "pwd > pwd.out 2>&1; echo \"RESULT: $?\" >> pwd.out"
+#  }
+#}
 
 #resource "null_resource" "ls" {
 #
@@ -37,9 +37,14 @@ resource "null_resource" "pwd" {
 #}
 
 
-resource "local_file" "foo" {
-    content     = "${file("${path.module}/pwd.out")}"
-    filename = "foo.bar"
+#resource "local_file" "foo" {
+#    content     = "${file("${path.module}/pwd.out")}"
+#    filename = "foo.bar"
+#
+#    depends_on = [ "null_resource.pwd" ]
+#}
 
-    depends_on = [ "null_resource.pwd" ]
+data "external" "cmd" {
+  program = ["sh", "cmd2out.sh"]
+
 }

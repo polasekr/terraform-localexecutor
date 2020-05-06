@@ -1,7 +1,6 @@
 output "stdout" {
   value       = <<EOF
  
-data.external.pwd.result
-data.external.ls.result
+data.external.cmd.result
 EOF
 }
