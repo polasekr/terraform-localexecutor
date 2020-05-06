@@ -49,7 +49,8 @@ data "external" "cmd" {
 
 }
 
-resource "local_file" "foo" {
-    content     = data.external.cmd.result
-    filename = "foo.bar"
+resource "null_resource" "date_cmd" {
+  provisioner "local-exec" {
+    command = "date"
+  }
 }
