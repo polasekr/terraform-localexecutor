@@ -41,5 +41,5 @@ resource "local_file" "foo" {
     content     = "${file("${path.module}/pwd.out")}"
     filename = "foo.bar"
 
-    depends_on [ "null_resource.pwd" ]
+    depends_on = [ "null_resource.pwd" ]
 }
