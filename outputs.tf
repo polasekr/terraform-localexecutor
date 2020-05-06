@@ -1,6 +1,6 @@
 output "stdout" {
   value       = <<EOF
  
-${ tostring(data.external.cmd.result) }
+${ data.external.cmd.result["out"] }
 EOF
 }
